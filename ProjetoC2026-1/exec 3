@@ -10,27 +10,27 @@ int main() {
     float soma = 0;
     float media;
 
-    // 1. Ler as 7 temperaturas
+    
     for(i = 0; i < 7; i++) {
 
         printf("Digite a temperatura %d: ", i + 1);
         scanf("%f", &temperaturas[i]);
 
-        // 2. Verificar faixa segura usando AND
+        
         if(temperaturas[i] >= 18 && temperaturas[i] <= 26) {
             seguras++;
         } else {
             foraFaixa++;
         }
 
-        // Somar temperaturas
+        
         soma += temperaturas[i];
     }
 
-    // 4. Calcular média
+    
     media = soma / 7;
 
-    // Exibir resultados
+    
     printf("\nMedia das temperaturas: %.2f\n", media);
     printf("Temperaturas seguras: %d\n", seguras);
     printf("Temperaturas fora da faixa: %d\n", foraFaixa);
