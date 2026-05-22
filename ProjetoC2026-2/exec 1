@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int quantidades[8];
+    int essencial;
+    int i;
+
+    int urgente = 0;
+    int estoqueOk = 0;
+
+    int menorQuantidade = 0;
+
+    for (i = 0; i < 8; i++) {
+        printf("Digite a quantidade do produto %d: ", i + 1);
+        scanf("%d", &quantidades[i]);
+
+        printf("O produto %d é essencial? (1 para sim, 0 para não): ", i + 1);
+        scanf("%d", &essencial);    
+
+
+        if (quantidades[i] < 10 && essencial == 1) {
+            urgente++;
+        } else {
+            estoqueOk++;
+        }
+
+
+        if (i == 0 || quantidades[i] < menorQuantidade) {
+            menorQuantidade = quantidades[i];
+        }           
+    } 
+return 0;
+}
