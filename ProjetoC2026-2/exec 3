@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    float consumos[7];
+    int horarioPico;
+    int i;
+
+    int altoCusto = 0;
+    int custoNormal = 0;
+
+    float soma = 0;
+    float media;
+
+    for (i = 0; i < 7; i++) {
+        printf("Digite o consumo do dia %d: ", i + 1);
+        scanf("%f", &consumos[i]);
+    }
+
+    printf("Digite o horário de pico (0 para não, 1 para sim): ");
+    scanf("%d", &horarioPico);
+    for (i = 0; i < 7; i++) {
+        if (horarioPico) {
+            altoCusto += consumos[i] * 0.20; // Custo adicional de 20% durante o horário de pico
+        } else {
+            custoNormal += consumos[i] * 0.10; // Custo normal de 10%
+        }
+        soma += consumos[i];
+    }
+
+    media = soma / 7;
+    printf("Custo total durante o horário de pico: %.2f\n", altoCusto);
+    printf("Custo total durante o horário normal: %.2f\n", custoNormal);        
+    printf("Média de consumo semanal: %.2f\n", media);
+
+return 0;
+}
